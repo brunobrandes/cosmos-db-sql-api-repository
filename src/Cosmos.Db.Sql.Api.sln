@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D798EDCC-AF56-4368-B6ED-E712D82AD2B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7BD6AFD8-F7EE-4CE8-8AAD-1C196118D0ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{783DE430-38E0-490F-A116-96FC637C0472}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Db.Sql.Api.Infra", "Infrastructure\Cosmos.Db.Sql.Api.Infra\Cosmos.Db.Sql.Api.Infra.csproj", "{167B31C3-A80E-4350-BA8D-E85B3F8D20BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Db.Sql.Api.Test.Unit", "Test\Cosmos.Db.Sql.Api.Test.Unit\Cosmos.Db.Sql.Api.Test.Unit.csproj", "{0D73878A-C557-4EB8-9AB0-7E6E41EFFEEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Db.Sql.Api.Domain", "Domain\Cosmos.Db.Sql.Api.Domain\Cosmos.Db.Sql.Api.Domain.csproj", "{1F591969-027D-49EE-B1A4-AF33080D6FDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{167B31C3-A80E-4350-BA8D-E85B3F8D20BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{167B31C3-A80E-4350-BA8D-E85B3F8D20BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{167B31C3-A80E-4350-BA8D-E85B3F8D20BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167B31C3-A80E-4350-BA8D-E85B3F8D20BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D73878A-C557-4EB8-9AB0-7E6E41EFFEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D73878A-C557-4EB8-9AB0-7E6E41EFFEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D73878A-C557-4EB8-9AB0-7E6E41EFFEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D73878A-C557-4EB8-9AB0-7E6E41EFFEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F591969-027D-49EE-B1A4-AF33080D6FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F591969-027D-49EE-B1A4-AF33080D6FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F591969-027D-49EE-B1A4-AF33080D6FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F591969-027D-49EE-B1A4-AF33080D6FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{167B31C3-A80E-4350-BA8D-E85B3F8D20BA} = {7BD6AFD8-F7EE-4CE8-8AAD-1C196118D0ED}
+		{0D73878A-C557-4EB8-9AB0-7E6E41EFFEEB} = {783DE430-38E0-490F-A116-96FC637C0472}
+		{1F591969-027D-49EE-B1A4-AF33080D6FDA} = {D798EDCC-AF56-4368-B6ED-E712D82AD2B6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CE79A9A-2161-4876-95D7-2BDEE75D3223}
+	EndGlobalSection
+EndGlobal

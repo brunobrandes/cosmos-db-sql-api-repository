@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Cosmos.Db.Sql.Api.Infra</AssemblyName>
+    <PackageId>Cosmos.Db.Sql.Api.Repository</PackageId>
+    <Version>1.0.0-preview</Version>
+    <Authors>Bruno Brandes</Authors>
+    <Product>Cosmos Db Sql Api Repository</Product>
+    <Description>
+      Infrastructure layer of generic implementation of Repository Pattern in C# to Cosmos DB SQL API
+    </Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/brunobrandes/cosmos-db-sql-api-repository</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/brunobrandes/cosmos-db-sql-api-repository</RepositoryUrl>
+    <PackageTags>dotnet cosmosdb sqlapi repositorypattern</PackageTags>
+    <PackageIcon>cosmos-db.png</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Cosmos.Db.Sql.Api.Domain\Cosmos.Db.Sql.Api.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\bruno\Desktop\cosmos-db.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

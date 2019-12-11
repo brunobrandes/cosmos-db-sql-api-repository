@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Cosmos" Version="4.0.0-preview" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Domain\Cosmos.Db.Sql.Api.Domain\Cosmos.Db.Sql.Api.Domain.csproj" />
+    <ProjectReference Include="..\..\..\src\Infrastructure\Cosmos.Db.Sql.Api.Infra\Cosmos.Db.Sql.Api.Infra.csproj" />
+    <ProjectReference Include="..\..\Domain\Foo.Domain\Foo.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
