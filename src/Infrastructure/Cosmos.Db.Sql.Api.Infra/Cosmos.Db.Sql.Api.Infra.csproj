@@ -14,7 +14,7 @@
     <PackageProjectUrl>https://github.com/brunobrandes/cosmos-db-sql-api-repository</PackageProjectUrl>
     <RepositoryUrl>https://github.com/brunobrandes/cosmos-db-sql-api-repository</RepositoryUrl>
     <PackageTags>dotnet cosmosdb sqlapi repositorypattern</PackageTags>
-    <PackageIcon>cosmos-db.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
 
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="C:\Users\bruno\Desktop\cosmos-db.png">
+    <None Include="..\..\..\pack\icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
