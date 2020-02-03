@@ -10,13 +10,11 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
         where TEntity : Entity
     {
         private readonly CosmosClient _cosmosClient;
-        private readonly Container _container;
+        private readonly CosmosContainer _container;
 
         public abstract string DatabaseId { get; }
         public abstract string ContainerId { get; }
                 
-        public Container Container { get { return _container; } }
-
         public GenericRepository(CosmosClient cosmosClient)
         {
             _cosmosClient = cosmosClient;

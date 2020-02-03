@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.1.0-preview</Version>
+    <Version>1.2.0-preview</Version>
     <Authors>Bruno Brandes</Authors>
     <Product>Cosmos Db Sql Api Repository</Product>
     <Description>
@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Cosmos" Version="4.0.0-preview" />
+    <PackageReference Include="Azure.Cosmos" Version="4.0.0-preview3" />
   </ItemGroup>
 
   <ItemGroup>
