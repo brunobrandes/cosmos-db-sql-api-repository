@@ -22,5 +22,7 @@ namespace Cosmos.Db.Sql.Api.Domain.Entities.Repositories
         Task<TEntity> GetByIdAsync(string id, PartitionKey partitionKey);
 
         IAsyncEnumerable<TEntity> GetAllAsync();
+
+        IAsyncEnumerable<TEntity> GetAllAsync(PartitionKey partitionKey);
     }
 }

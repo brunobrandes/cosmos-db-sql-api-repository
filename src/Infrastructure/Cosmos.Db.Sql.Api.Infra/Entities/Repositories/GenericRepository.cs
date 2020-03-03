@@ -14,7 +14,7 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
 
         public abstract string DatabaseId { get; }
         public abstract string ContainerId { get; }
-                
+
         public GenericRepository(CosmosClient cosmosClient)
         {
             _cosmosClient = cosmosClient;
@@ -48,6 +48,15 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
         public async IAsyncEnumerable<TEntity> GetAllAsync()
         {
             await foreach (var item in _container.GetItemQueryIterator<TEntity>(new QueryDefinition("SELECT * FROM c")))
+            {
+                yield return item;
+            }
+        }
+
+        public async IAsyncEnumerable<TEntity> GetAllAsync(PartitionKey partitionKey)
+        {
+            await foreach (var item in _container.GetItemQueryIterator<TEntity>(new QueryDefinition("SELECT * FROM c"), null,
+                new QueryRequestOptions { PartitionKey = partitionKey }))
             {
                 yield return item;
             }
