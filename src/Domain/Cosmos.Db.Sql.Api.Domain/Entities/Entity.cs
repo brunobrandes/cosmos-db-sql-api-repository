@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Cosmos.Db.Sql.Api.Domain.Entities
 {
@@ -7,11 +8,13 @@ namespace Cosmos.Db.Sql.Api.Domain.Entities
         /// <summary>
         /// Default document entity identifier
         /// </summary>
+        [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
         /// <summary>
         /// Data time to live
         /// </summary>
+        [JsonProperty(PropertyName = "ttl")]
         public int Ttl { get; set; }
 
         /// <summary>

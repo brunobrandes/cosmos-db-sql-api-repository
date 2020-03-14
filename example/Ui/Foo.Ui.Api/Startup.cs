@@ -26,7 +26,15 @@ namespace Foo.Ui.Api
                 .AddControllers();
 
             services
-                .AddScoped<IFooRepository>(x => new FooRepository(new CosmosClient(Configuration.GetConnectionString("DefaultConnection"))));
+                .AddScoped<IFooRepository>(x => new FooRepository(new CosmosClient(Configuration.GetConnectionString("DefaultConnection"),
+                new CosmosClientOptions
+                {
+                    SerializerOptions = new CosmosSerializationOptions
+                    {
+                        Indented = true,
+                        PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
+                    }
+                })));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

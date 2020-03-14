@@ -19,12 +19,6 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
         public GenericRepository(CosmosClient cosmosClient)
         {
             _cosmosClient = cosmosClient;
-            _cosmosClient.ClientOptions.SerializerOptions = new CosmosSerializationOptions
-            {
-                Indented = true,
-                PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
-            };
-
             _container = _cosmosClient.GetContainer(DatabaseId, ContainerId);
             
         }
