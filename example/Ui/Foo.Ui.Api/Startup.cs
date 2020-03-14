@@ -1,4 +1,5 @@
 using Azure.Cosmos;
+using Azure.Cosmos.Serialization;
 using Foo.Domain.Entities.Repositories;
 using Foo.Infra.Entities.Repositories;
 using Microsoft.AspNetCore.Builder;

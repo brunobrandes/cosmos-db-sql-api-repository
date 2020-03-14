@@ -1,4 +1,5 @@
 ﻿using Azure.Cosmos;
+using Azure.Cosmos.Serialization;
 using Cosmos.Db.Sql.Api.Domain.Entities;
 using Cosmos.Db.Sql.Api.Domain.Entities.Repositories;
 using System.Collections.Generic;
@@ -18,7 +19,14 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
         public GenericRepository(CosmosClient cosmosClient)
         {
             _cosmosClient = cosmosClient;
+            _cosmosClient.ClientOptions.SerializerOptions = new CosmosSerializationOptions
+            {
+                Indented = true,
+                PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
+            };
+
             _container = _cosmosClient.GetContainer(DatabaseId, ContainerId);
+            
         }
 
         public async Task AddAsync(TEntity entity, PartitionKey partitionKey)

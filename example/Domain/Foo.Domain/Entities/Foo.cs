@@ -1,7 +1,9 @@
 ﻿using Cosmos.Db.Sql.Api.Domain.Entities;
+using System;
 
 namespace Foo.Domain.Entities
 {
+    [Serializable]
     public class Foo : Entity
     {
         public Foo()
