@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.3.2-preview</Version>
+    <Version>1.3.3-preview</Version>
     <Authors>Bruno Brandes</Authors>
     <Product>Cosmos Db Sql Api Repository</Product>
     <Description>

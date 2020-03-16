@@ -31,8 +31,7 @@ namespace Foo.Ui.Api
                 {
                     SerializerOptions = new CosmosSerializationOptions
                     {
-                        Indented = true,
-                        PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
+                        Indented = true
                     }
                 })));
         }
