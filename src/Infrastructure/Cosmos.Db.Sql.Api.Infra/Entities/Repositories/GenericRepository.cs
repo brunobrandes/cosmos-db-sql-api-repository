@@ -1,5 +1,4 @@
 ﻿using Azure.Cosmos;
-using Azure.Cosmos.Serialization;
 using Cosmos.Db.Sql.Api.Domain.Entities;
 using Cosmos.Db.Sql.Api.Domain.Entities.Repositories;
 using System.Collections.Generic;

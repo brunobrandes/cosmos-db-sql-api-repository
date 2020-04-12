@@ -21,7 +21,7 @@ namespace Cosmos.Db.Sql.Api.Domain.Entities
         /// Entity
         /// </summary>
         /// <param name="generateId">Generate id</param>
-        public Entity(bool generateId)
+        public Entity(bool generateId = true)
         {
             SetDefaultTimeToLive();
 

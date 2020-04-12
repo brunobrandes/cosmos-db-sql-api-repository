@@ -18,8 +18,8 @@ namespace Foo.Infra.Entities.Repositories
             _container = cosmosClient.GetContainer(DatabaseId, ContainerId);
         }
 
-        public override string DatabaseId => "Foo";
-        public override string ContainerId => "Foo";
+        public override string DatabaseId => "ShinobiRanks";
+        public override string ContainerId => "Items";
 
         public async Task<IEnumerable<Domain.Entities.Foo>> GetByNeighborhood(string neighborhood)
         {
