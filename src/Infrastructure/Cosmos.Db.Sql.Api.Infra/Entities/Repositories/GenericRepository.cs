@@ -22,13 +22,13 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
             
         }
 
-        public async Task AddAsync(TEntity entity, PartitionKey partitionKey)
+        public async Task AddAsync(TEntity entity, string partitionKey)
         {
-            var itemResponse = await _container.CreateItemAsync<TEntity>(entity, partitionKey);
+            var itemResponse = await _container.CreateItemAsync<TEntity>(entity, new PartitionKey(partitionKey));
             entity.Id = itemResponse.Value.Id;
         }
 
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities, PartitionKey partitionKey)
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities, string partitionKey)
         {
             foreach (var entity in entities)
             {
@@ -36,9 +36,9 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
             }
         }
 
-        public async Task DeleteAsync(string id, PartitionKey partitionKey)
+        public async Task DeleteAsync(string id, string partitionKey)
         {
-            await _container.DeleteItemAsync<TEntity>(id, partitionKey);
+            await _container.DeleteItemAsync<TEntity>(id, new PartitionKey(partitionKey));
         }
 
         public void Dispose()
@@ -54,18 +54,18 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
             }
         }
 
-        public async IAsyncEnumerable<TEntity> GetAllAsync(PartitionKey partitionKey)
+        public async IAsyncEnumerable<TEntity> GetAllAsync(string partitionKey)
         {
             await foreach (var item in _container.GetItemQueryIterator<TEntity>(new QueryDefinition("SELECT * FROM c"), null,
-                new QueryRequestOptions { PartitionKey = partitionKey }))
+                new QueryRequestOptions { PartitionKey = new PartitionKey(partitionKey) }))
             {
                 yield return item;
             }
         }
 
-        public async Task<TEntity> GetByIdAsync(string id, PartitionKey partitionKey)
+        public async Task<TEntity> GetByIdAsync(string id, string partitionKey)
         {
-            var itemResponse = await _container.ReadItemAsync<TEntity>(id, partitionKey);
+            var itemResponse = await _container.ReadItemAsync<TEntity>(id, new PartitionKey(partitionKey));
 
             if (itemResponse != null && itemResponse.Value != null)
                 return itemResponse.Value;
@@ -73,9 +73,9 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
             return null;
         }
 
-        public async Task UpdateAsync(TEntity entity, PartitionKey partitionKey)
+        public async Task UpdateAsync(TEntity entity, string partitionKey)
         {
-            await _container.ReplaceItemAsync<TEntity>(entity, entity.Id, partitionKey);
+            await _container.ReplaceItemAsync<TEntity>(entity, entity.Id, new PartitionKey(partitionKey));
         }
     }
 }

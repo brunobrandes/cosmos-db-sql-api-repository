@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>Cosmos.Db.Sql.Api.Infra</AssemblyName>
     <PackageId>Cosmos.Db.Sql.Api.Repository</PackageId>
-    <Version>1.4.0-preview</Version>
+    <Version>2.0.0-preview</Version>
     <Authors>Bruno Brandes</Authors>
     <Product>Cosmos Db Sql Api Repository</Product>
     <Description>
@@ -27,6 +27,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Cosmos" Version="4.0.0-preview3" />
   </ItemGroup>
 
 </Project>
