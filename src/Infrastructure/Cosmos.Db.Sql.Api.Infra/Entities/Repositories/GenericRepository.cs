@@ -1,12 +1,13 @@
 ﻿using Azure.Cosmos;
 using Cosmos.Db.Sql.Api.Domain.Entities;
 using Cosmos.Db.Sql.Api.Domain.Entities.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
 {
-    public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity>
+    public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity>, IDisposable
         where TEntity : Entity
     {
         private readonly CosmosClient _cosmosClient;
@@ -28,14 +29,6 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
             entity.Id = itemResponse.Value.Id;
         }
 
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities, string partitionKey)
-        {
-            foreach (var entity in entities)
-            {
-                await AddAsync(entity, partitionKey);
-            }
-        }
-
         public async Task DeleteAsync(string id, string partitionKey)
         {
             await _container.DeleteItemAsync<TEntity>(id, new PartitionKey(partitionKey));
@@ -43,7 +36,7 @@ namespace Cosmos.Db.Sql.Api.Infra.Entities.Repositories
 
         public void Dispose()
         {
-            _cosmosClient.Dispose();
+            _cosmosClient?.Dispose();
         }
 
         public async IAsyncEnumerable<TEntity> GetAllAsync()

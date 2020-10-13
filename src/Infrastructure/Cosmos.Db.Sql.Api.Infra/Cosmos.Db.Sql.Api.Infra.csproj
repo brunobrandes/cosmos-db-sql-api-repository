@@ -23,14 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Cosmos" Version="4.0.0-preview3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\..\pack\icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Azure.Cosmos" Version="4.0.0-preview3" />
   </ItemGroup>
 
 </Project>

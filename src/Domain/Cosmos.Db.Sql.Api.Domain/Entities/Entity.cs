@@ -26,7 +26,9 @@ namespace Cosmos.Db.Sql.Api.Domain.Entities
             SetDefaultTimeToLive();
 
             if (generateId)
+            {
                 this.Id = Guid.NewGuid().ToString();
+            }                
         }
 
         /// <summary>

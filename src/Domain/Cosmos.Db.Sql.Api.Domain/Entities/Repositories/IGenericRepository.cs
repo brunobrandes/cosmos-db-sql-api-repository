@@ -12,16 +12,14 @@ namespace Cosmos.Db.Sql.Api.Domain.Entities.Repositories
 
         Task AddAsync(TEntity entity, string partitionKey);
 
-        Task AddRangeAsync(IEnumerable<TEntity> entities, string partitionKey);
-
-        Task UpdateAsync(TEntity entity, string partitionKey);
-
         Task DeleteAsync(string id, string partitionKey);
-
-        Task<TEntity> GetByIdAsync(string id, string partitionKey);
 
         IAsyncEnumerable<TEntity> GetAllAsync();
 
         IAsyncEnumerable<TEntity> GetAllAsync(string partitionKey);
+
+        Task<TEntity> GetByIdAsync(string id, string partitionKey);
+
+        Task UpdateAsync(TEntity entity, string partitionKey);
     }
 }
