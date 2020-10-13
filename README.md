@@ -1,4 +1,4 @@
-## ![Cosmos Db](https://i.imgur.com/k6pHHKn.png) Azure Cosmos DB SQL API Repository
+## Azure Cosmos DB Sql Api Repository
 A generic implementation of Repository Pattern in C# to Cosmos DB SQL API
 
 [![Build status](https://ci.appveyor.com/api/projects/status/0i6s33kw3y87tkb2?svg=true)](https://ci.appveyor.com/project/brunobrandes/azure-cosmos-db-repository)
